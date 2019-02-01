@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import StagesModel
 
 
 def all_actions(request):
@@ -6,4 +7,5 @@ def all_actions(request):
 
 
 def stage_page(request):
-    return render(request, 'allActions/poll.html')
+    stages = StagesModel.objects.all()
+    return render(request, 'allActions/poll.html', context={'stages': stages})

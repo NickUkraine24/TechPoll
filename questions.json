@@ -1,0 +1,42 @@
+[
+{
+  "model": "allActions.QuestionsModel",
+  "pk": 1,
+  "fields": {
+    "title": "Process planning (SDLC)",
+    "f_stage": 1,
+    "hint": "Understanding of common software development life cycle models (Waterfall, Agile), Scrum concepts and process, pros and cons of tools, technics and approaches used in a development process.",
+    "department": []
+  }
+},
+{
+  "model": "allActions.QuestionsModel",
+  "pk": 2,
+  "fields": {
+    "title": "Estimation",
+    "f_stage": 1,
+    "hint": "Terminology understanding, using simple and advanced estimations techniques: Scope, Estimates/Targets/Commitments, Overestimate vs Underestimate, Analogy and Story based estimates, methods: Delphi, PERT, COCOMO II etc.",
+    "department": []
+  }
+},
+{
+  "model": "allActions.QuestionsModel",
+  "pk": 3,
+  "fields": {
+    "title": "Software requirements engineering",
+    "f_stage": 2,
+    "hint": "Sources of Requirements, Software Requirements Specifications, Requirements Elicitation Techniques (Brainstorming, Interviews, Survey/Questionnaire, Document Analysis), Functional vs Non-Functional requirements.",
+    "department": []
+  }
+},
+{
+  "model": "allActions.QuestionsModel",
+  "pk": 4,
+  "fields": {
+    "title": "OOD",
+    "f_stage": 3,
+    "hint": "An ability to use effectively fundamental OOP knowledge, microarchitectural design patterns (as 3 major groups of GoF design patterns like creational, structural and behavioral) and major macroachitectural patterns (MVC, Layered Architecture, IoC, etc), SOLID principles.",
+    "department": []
+  }
+}
+  ]

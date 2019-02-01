@@ -20,49 +20,9 @@
 <body>
     {% include 'allActions/navbar.html' %}
     <div class="md-stepper-horizontal black">
-        <div class="md-step active">
-          <div class="md-step-circle"><span>1</span></div>
-          <div class="md-step-title">Engineering Management</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>2</span></div>
-          <div class="md-step-title">Requirements</div>
-{#              <div class="md-step-optional">Optional</div>#}
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>3</span></div>
-          <div class="md-step-title">Design</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>4</span></div>
-          <div class="md-step-title">Construction</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>5</span></div>
-          <div class="md-step-title">DB</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>6</span></div>
-          <div class="md-step-title">Verification</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
-        <div class="md-step">
-          <div class="md-step-circle"><span>7</span></div>
-          <div class="md-step-title">Management</div>
-          <div class="md-step-bar-left"></div>
-          <div class="md-step-bar-right"></div>
-        </div>
+        {% for stage in stages %}
+            {% include 'allActions/stage.html' %}
+        {% endfor %}
     </div>
     {% include 'allActions/footer.html' %}
 </body>

@@ -8,9 +8,9 @@ class SectionsModel(models.Model):
     name = models.CharField(max_length=60, default=None)
 
 
-class StepsModel(models.Model):
+class StagesModel(models.Model):
     class Meta:
-        db_table = 'steps'
+        db_table = 'stages'
 
     title = models.CharField(max_length=60, default=None)
     f_section = models.ForeignKey('SectionsModel', on_delete=models.DO_NOTHING)
@@ -28,7 +28,9 @@ class QuestionsModel(models.Model):
         db_table = 'questions'
 
     title = models.CharField(max_length=60, default=None)
-    f_step = models.ForeignKey('StepsModel', on_delete=models.DO_NOTHING)
+    hint = models.TextField(max_length=300, default=None)
+    f_stage = models.ForeignKey('StagesModel', on_delete=models.DO_NOTHING)
+    department = models.ManyToManyField('DepartmentsModel')
 
 
 class GradesModel(models.Model):
