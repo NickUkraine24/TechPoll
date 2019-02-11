@@ -1,11 +1,11 @@
 from django.contrib import admin
-from django.urls import re_path
+from django.urls import path
 from django.conf.urls import include
 
 urlpatterns = [
-    re_path(r'^admin', admin.site.urls),
-    re_path(r'^actions', include('allActions.urls')),
-    re_path(r'^authentication', include('authentication.urls')),
-    re_path(r'^users', include('users.urls')),
-    re_path(r'^answers', include('answers.urls')),
+    path('admin/', admin.site.urls, name='admins'),
+    path('', include('answers.urls')),
+    path('authentication/', include('authentication.urls')),
+    # path('expert/', include('allActions.urls')),
+    # path('users/', include('users.urls')),
 ]

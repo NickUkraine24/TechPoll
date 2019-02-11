@@ -3,8 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
-        <link href="{% static 'main.css' %}" rel="stylesheet">
+        <title>TechPoll</title>
         {#  Bootstrap CDN  #}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
@@ -12,6 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
               integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"
         >
+        <link href="{% static 'main.css' %}" rel="stylesheet">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"
         ></script>
@@ -22,10 +22,14 @@
 
     <!-- Begin page content -->
         <div class="container">
-          <div class="page-header">
-            <h1>Technical Poll Candidate</h1>
-          </div>
-            <a href="{% url 'poll_page' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Pass poll</a>
+            <div class="page-header">
+                <h1>Technical Poll Candidate</h1>
+            </div>
+            {% if user.is_authenticated %}
+                <a href="{% url 'poll_page' stage_id=1 %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Pass poll</a>
+            {% else %}
+                <a href="{% url 'login_page' %}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Pass poll</a>
+            {% endif %}
         </div>
 
     {% include 'allActions/footer.html' %}

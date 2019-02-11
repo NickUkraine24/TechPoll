@@ -1,9 +1,6 @@
-from django.urls import re_path
-from . import views
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    re_path(r'poll$', views.stage_page, name='poll_page'),
-    re_path(r'$', views.all_actions),
-
+    path('', views.all_actions)
 ]

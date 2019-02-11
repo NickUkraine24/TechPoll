@@ -5,6 +5,10 @@ class SectionsModel(models.Model):
     class Meta:
         db_table = 'sections'
 
+    def sectionslogic(self) -> int:
+        res = StagesModel.objects.filter(f_section_id=self.id).first().id
+        return res
+
     name = models.CharField(max_length=60, default=None)
 
 
@@ -28,9 +32,9 @@ class QuestionsModel(models.Model):
         db_table = 'questions'
 
     title = models.CharField(max_length=60, default=None)
-    hint = models.TextField(max_length=300, default=None)
+    hint = models.TextField(max_length=300, null=True, blank=True)
     f_stage = models.ForeignKey('StagesModel', on_delete=models.DO_NOTHING)
-    department = models.ManyToManyField('DepartmentsModel')
+    # department = models.ManyToManyField('DepartmentsModel')
 
 
 class GradesModel(models.Model):

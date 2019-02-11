@@ -1,0 +1,28 @@
+{% block table %}
+    <tr>
+        <td
+            class="hintPopover"
+            data-toggle="popover"
+            data-placement="right"
+            data-original-title="HINT"
+            data-content="{{ question.hint }}"
+        >{{ question.title }}</td>
+        <td><div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-light btn_like">
+                <input type="radio" name="{{ question.id }}_like" value="Yes"> l
+            </label>
+            <label class="btn btn-light btn_like">
+                <input type="radio" name="{{ question.id }}_like" value="No"> 0
+            </label>
+        </div></td>
+        <td>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" role="group">
+                {% for grade in grades %}
+                    <label class="btn btn-scale-asc">
+                        <input class="la_liked" type="radio" name="{{ question.id }}grade" value="{{ grade.name }}">{{ grade.name }}
+                    </label>
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+{% endblock %}

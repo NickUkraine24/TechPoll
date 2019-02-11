@@ -1,0 +1,7 @@
+{% block section %}
+    <li role="presentation" class="active" id="section_li">
+        <a href="{% url 'poll_page' stage_id=section.sectionslogic %}" style="cursor: pointer">
+            {{ section.name }}
+        </a>
+    </li>
+{% endblock %}

@@ -1,11 +1,5 @@
-from django.shortcuts import render
-from .models import StagesModel
+from django.http import HttpResponse
 
 
 def all_actions(request):
-    return render(request, 'allActions/main.html')
-
-
-def stage_page(request):
-    stages = StagesModel.objects.all()
-    return render(request, 'allActions/poll.html', context={'stages': stages})
+    return HttpResponse('Expert view')

@@ -1,10 +1,9 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 #footer {
@@ -17,14 +16,51 @@ body {
     margin: 0 auto;
     padding-top: 15px;
 }
-
-/* Custom page CSS
--------------------------------------------------- */
-/* Not required for template or sticky footer method. */
-
 body > .container {
-  padding: 60px 15px 0;
+    padding: 60px 15px 0;
 }
 .container .text-muted {
-  margin: 20px 0;
+    margin: 20px 0;
+}
+.panel-default{
+    margin: auto;
+    width: 70%;
+    border: 0px;
+    padding: 10px;
+}
+.page_footer{
+    background-color: #333333;
+    color: #9d9d9d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+}
+.page_footer .footer{
+    margin: 15px;
+}
+.btn-scale-asc {
+	background-color: #333;
+	color: #9d9d9d;
+}
+.btn-scale-asc:hover{
+    background-color: #9d9d9d;
+    color: #333
+}
+.btnNavigation{
+    margin-top: 25px;
+}
+#nextStage{
+    float: right;
+}
+.btn_like{
+    background-color: #33333317;
+}
+.btn_like:hover{
+    background-color: #3333337a;
+}
+.btn-group > label.active{
+    background-color: #9d9d9d;;
+    color: #333333; !important;
 }

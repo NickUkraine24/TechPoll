@@ -1,6 +1,8 @@
-from django.urls import re_path
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    re_path(r'$', views.authentication)
+    path('', views.LoginView.as_view(), name='login'),
+    path('logout/', views.LogoutView.as_view(), name='logout'),
+    path('routing/', views.RoutingView.as_view(), name='routing'),
 ]
