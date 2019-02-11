@@ -41,8 +41,10 @@ class Answers(View):
             answer.f_question_id = int(question_id)
             query_list.append(answer)
         AnswersModel.objects.bulk_create(query_list)
-
-        return redirect('/{}/{}'.format('poll', stage_id+1))
+        if stage_id == len(StagesModel.objects.all()):
+            return redirect('/{}'.format(''))
+        else:
+            return redirect('/{}/{}'.format('poll', stage_id+1))
 
 
 class LoginPage(View):
