@@ -1,5 +1,3 @@
-from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views import View
 from allActions.models import GradesModel, StagesModel, SectionsModel, QuestionsModel
@@ -7,12 +5,13 @@ from .models import AnswersModel
 
 
 def main_action(request):
+    # Navigate to cover page
     return render(request, 'allActions/main.html')
 
 
 class Answers(View):
-    # @login_required()
     def get(self, request, stage_id):
+        # Taking a data with a Postgres by specific filter
         questions = QuestionsModel.objects.filter(f_stage_id=stage_id)
         stages = StagesModel.objects.filter(f_section_id=StagesModel.objects.get(id=stage_id).f_section)
         stage_s = StagesModel.objects.get(pk=stage_id)
@@ -28,6 +27,7 @@ class Answers(View):
         })
 
     def post(self, request, stage_id):
+        # Entering a data with a front side in Postgres with filter
         query_list = []
         questions_id = set(filter(lambda key: key.isnumeric(), map(lambda x: x[:-5], dict(request.POST).keys())))
         for question_id in questions_id:
@@ -41,6 +41,7 @@ class Answers(View):
             answer.f_question_id = int(question_id)
             query_list.append(answer)
         AnswersModel.objects.bulk_create(query_list)
+        # Filter for avoidance error
         if stage_id == len(StagesModel.objects.all()):
             return redirect('/{}'.format(''))
         else:
@@ -49,4 +50,5 @@ class Answers(View):
 
 class LoginPage(View):
     def get(self, request):
+        # Navigate to authentication page
         return render(request, 'authentication/auth.html')

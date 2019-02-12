@@ -17,18 +17,18 @@
         ></script>
     </head>
     <body class="body_main">
-    {% include 'allActions/navbar.html' %}
+        {% include 'allActions/navbar.html' %}
         <div class="container">
             <div class="page-header">
                 <h1 id="txt_h1">Technical Poll Candidate</h1>
             </div>
+            {# Logic for authentication #}
             {% if user.is_authenticated %}
                 <a href="{% url 'poll_page' stage_id=1 %}" class="btn btn-secondary btn-lg active btn_log" role="button" aria-pressed="true">Pass poll</a>
             {% else %}
                 <a href="{% url 'login_page' %}" class="btn btn-secondary btn-lg active btn_log" role="button" aria-pressed="true">Pass poll</a>
             {% endif %}
         </div>
-
-    {% include 'allActions/footer.html' %}
+        {% include 'allActions/footer.html' %}
     </body>
 </html>

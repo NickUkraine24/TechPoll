@@ -9,5 +9,6 @@ class LogoutView(View):
         raise Http404
 
     def post(self, request):
+        # Entering a user via authentication and redirect on the cover page
         auth.logout(request)
         return redirect('main_page')

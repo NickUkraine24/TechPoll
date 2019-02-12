@@ -29,6 +29,7 @@
     </ul>
     <div class="md-stepper-horizontal black">
         {% for stage in stages %}
+            {# Logic for creating active style for stage #}
             {% if stage_s == stage %}
                 <div class="md-step active">
                     {% include 'allActions/stage.html' %}
@@ -41,6 +42,7 @@
         {% endfor %}
     </div>
     <div class="panel panel-default">
+        {# Form for inputing data #}
         <form action="{% url 'poll_page' stage_id=stage_id %}" method="post">
             {% csrf_token %}
             <table class="table">

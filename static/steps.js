@@ -1,4 +1,5 @@
 function change_url_previous() {
+    // Logic for switch a button
     url = window.location.pathname;
     if (parseInt(url.charAt(url.length-1)) == 1){
         document.getElementById("previousStage").disabled = true;

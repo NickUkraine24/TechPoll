@@ -6,6 +6,8 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admins'),
     path('', include('answers.urls')),
     path('authentication/', include('authentication.urls')),
+
+    # Future roles
     # path('expert/', include('allActions.urls')),
     # path('users/', include('users.urls')),
 ]

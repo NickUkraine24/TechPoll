@@ -9,6 +9,7 @@ class LoginView(View):
         raise Http404
 
     def post(self, request):
+        # Verifying data with Postgres and logic if user write incorrect data
         user = auth.authenticate(
             username=request.POST['username'],
             password=request.POST['password']
